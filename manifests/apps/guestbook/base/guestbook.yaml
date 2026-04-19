@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: guestbook
-        image: public.ecr.aws/docker/library/guestbook:v3
+        image: googlecontainer/guestbook:v3
         ports:
         - containerPort: 80
 ---
