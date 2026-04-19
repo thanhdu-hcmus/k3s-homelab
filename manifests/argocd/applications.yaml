@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_USERNAME/k3s-homelab.git # USER: REPLACE THIS
+    repoURL: https://github.com/thanhdu-hcmus/k3s-homelab.git # USER: REPLACE THIS
     targetRevision: HEAD
     path: manifests/apps/guestbook/overlays/dev
   destination:
@@ -27,7 +27,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_USERNAME/k3s-homelab.git # USER: REPLACE THIS
+    repoURL: https://github.com/thanhdu-hcmus/k3s-homelab.git # USER: REPLACE THIS
     targetRevision: HEAD
     path: manifests/apps/guestbook/overlays/staging
   destination:
@@ -48,7 +48,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_USERNAME/k3s-homelab.git # USER: REPLACE THIS
+    repoURL: https://github.com/thanhdu-hcmus/k3s-homelab.git # USER: REPLACE THIS
     targetRevision: HEAD
     path: manifests/apps/guestbook/overlays/prod
   destination:
