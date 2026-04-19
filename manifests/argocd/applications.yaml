@@ -1,0 +1,62 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_USERNAME/k3s-homelab.git # USER: REPLACE THIS
+    targetRevision: HEAD
+    path: manifests/apps/guestbook/overlays/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: env-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook-staging
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_USERNAME/k3s-homelab.git # USER: REPLACE THIS
+    targetRevision: HEAD
+    path: manifests/apps/guestbook/overlays/staging
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: env-staging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_USERNAME/k3s-homelab.git # USER: REPLACE THIS
+    targetRevision: HEAD
+    path: manifests/apps/guestbook/overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: env-prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
