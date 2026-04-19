@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: guestbook
-        image: gcr.io/google-samples/gb-frontend:v4
+        image: nginx:latest
         ports:
         - containerPort: 80
 ---
